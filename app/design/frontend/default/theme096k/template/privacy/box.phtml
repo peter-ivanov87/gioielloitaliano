@@ -1,0 +1,30 @@
+<?php
+$data = Mage::getModel('privacy/privacy')->getPrivacyCondition();
+if ($data->getId() == "")
+	return;
+?>
+<div class="fieldset">
+	<h2 class="legend"><?php echo $this->__('Privacy Policy') ?></h2>
+	<div id="checkout-agreements">
+		<ol class="checkout-agreements">
+			<li>
+				<div class="agreement-content"<?php echo ($data->getContentHeight() ? ' style="height:' . $data->getContentHeight() . '"' : '')?>>
+					<?php if ($data->getIsHtml()):?>
+						<?php echo $data->getContent() ?>
+					<?php else:?>
+						<?php echo nl2br($this->htmlEscape($data->getContent())) ?>
+					<?php endif; ?>
+				</div>
+				<p class="agree">
+					<p><strong><?php echo $data->getIsHtml() ? $data->getCheckboxText() : $this->htmlEscape($data->getCheckboxText()) ?></strong></p>
+					
+					<input type="radio" id="agreement-<?php echo $data->getId()?>" name="agreement[<?php echo $data->getId()?>]" value="1" title="<?php echo $this->htmlEscape($data->getCheckboxText()) ?>" class="radio required-entry" />
+					<label for="agreement-<?php echo $data->getId()?>"><?=$this->__('Yes');?></label>
+					
+					<input type="radio" id="agreement-<?php echo $data->getId()?>-no" name="agreement[<?php echo $data->getId()?>]" value="0" title="<?php echo $this->htmlEscape($data->getCheckboxText()) ?>" class="radio" />
+					<label for="agreement-<?php echo $data->getId()?>-no"><?=$this->__('No');?></label>
+				</p>
+			</li>
+		</ol>
+	</div>
+</div>

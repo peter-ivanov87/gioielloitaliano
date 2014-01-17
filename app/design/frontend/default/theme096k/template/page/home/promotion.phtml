@@ -1,0 +1,68 @@
+<?php
+    $category=Mage::getModel('catalog/category')->load(56); //ID=56
+    
+    $products = Mage::getModel('catalog/product')
+    ->getCollection()
+    ->addCategoryFilter($category)
+    ->load();
+?>
+    
+    
+<?php
+    $itemCount=0;
+    foreach ($products as $aproduct):
+        
+        $product = Mage::getModel('catalog/product')->load($aproduct->getId());
+        $_imageUrl =  Mage::helper('catalog/image')->init($product, 'thumbnail');
+      
+?>  
+        <?php if ($itemCount==0): ?>
+        <ul class="products-grid first odd" >
+        <?php endif;?>
+        <?php if ($itemCount==4): ?>
+        <ul class="products-grid first odd" style="display: none;" id="extra_panel">
+        <?php endif;?>
+            <li class="item home_product">            
+                <a href="<?php echo $product->getProductUrl(); ?>" title="<?php echo $product->getName(); ?>" class="product-image">
+                    <img src="<?php echo $_imageUrl; ?>" width="174" height="174" alt="<?php echo $product->getName(); ?>">
+                    <button type="button" title="Aggiungi al carrello" class="button btn-cart" onclick="setLocation('<?php echo $product->getProductUrl(); ?>')"><span>Vedi li prodotto</span></button>
+                </a>                               
+            </li>
+        <?php if ($itemCount==3): ?>
+        </ul>         
+        <?php endif;?>      
+           
+        <?php if ($itemCount==7): ?>            
+        </ul>
+        <a href="javascript:void(0)" id="product_show" onclick="showProductPanel('extra_panel','product_show','product_hide')"><font><font class="">Show all promotions</font></font></a>
+        <a href="javascript:void(0)" id="product_hide" onclick="hideProductPanel('extra_panel','product_show','product_hide')" style="display:none;"><font><font>Hide promotions</font></font></a>
+        <?php endif;?>
+<?php
+    if ($itemCount==7)
+        break;
+    $itemCount++;
+    endforeach;
+?>
+<?php if (($itemCount!=3) || ($itemCount!=7)): ?>            
+        </ul>        
+<?php endif;?>
+<?php if ($itemCount!=7): ?>            
+    <a href="javascript:void(0)" id="product_show" onclick="showProductPanel('extra_panel','product_show','product_hide')"><font><font class="">Show all promotions</font></font></a>
+    <a href="javascript:void(0)" id="product_hide" onclick="hideProductPanel('extra_panel','product_show','product_hide')" style="display:none;"><font><font>Hide promotions</font></font></a>
+<?php endif;?>
+
+<script>
+    function showProductPanel(id,showId,hideId){
+        document.getElementById(id).style.display = 'block';
+        document.getElementById(hideId).style.display = 'block';
+        document.getElementById(showId).style.display = 'none';
+
+    }
+    function hideProductPanel(id,showId,hideId){
+        document.getElementById(id).style.display = 'none';
+        document.getElementById(showId).style.display = 'block';
+        document.getElementById(hideId).style.display = 'none';    
+    }
+</script>
+
+

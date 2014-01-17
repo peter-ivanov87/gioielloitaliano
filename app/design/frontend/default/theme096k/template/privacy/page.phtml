@@ -1,0 +1,17 @@
+<?php
+$data = Mage::getModel('privacy/privacy')->getPrivacyCondition();
+if ($data->getId() == "")
+	return;
+?>
+<div class="page-title">
+	<h2 class="legend"><?php echo Mage::helper('privacy')->__('Privacy Policy') ?></h2>
+</div>
+<div class="std">
+	<div class="agreement-content">
+		<?php if ($data->getIsHtml()):?>
+			<?php echo $data->getContent() ?>
+		<?php else:?>
+			<?php echo nl2br($this->htmlEscape($data->getContent())) ?>
+		<?php endif; ?>
+	</div>
+</div>

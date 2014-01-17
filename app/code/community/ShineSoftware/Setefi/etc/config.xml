@@ -1,0 +1,142 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * @category   Shine Software
+ * @package    Setefi
+ * @email	   info@shinesoftware.com
+ * @copyright  Copyright (c) 2008 Shine Software (http://www.shinesoftware.com)
+ */
+-->
+<config>
+    <modules>
+        <ShineSoftware_Setefi>
+            <version>8.0</version>
+        </ShineSoftware_Setefi>
+    </modules>
+    <global>
+        <models>
+            <setefi>
+                <class>ShineSoftware_Setefi_Model</class>
+            </setefi>
+        </models>
+        <helpers>
+	      <setefi>
+            <class>ShineSoftware_Setefi_Helper</class>
+		  </setefi>
+	    </helpers>
+        <resources>
+            <setefi_setup>
+                <setup>
+                    <module>ShineSoftware_Setefi</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </setefi_setup>
+            <setefi_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </setefi_write>
+            <setefi_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </setefi_read>
+        </resources>
+        <blocks>
+            <setefi><class>ShineSoftware_Setefi_Block</class></setefi>
+        </blocks>
+        <payment>
+        	<url>https://www.setefi.it/</url>
+            <authorization>
+                <modes>
+                    <implicitmode>
+                        <code>1</code>
+                        <name>Implicit Mode</name>
+                    </implicitmode>
+                    <explicitmode>
+                    	<code>2</code>
+                    	<name>Explicit Mode</name>
+                    </explicitmode>
+                </modes>
+            </authorization>
+            <transaction>
+                <modes>
+                    <live>
+                        <code>live</code>
+                        <name>Live Mode</name>
+                    </live>
+                    <test>
+                    	<code>test</code>
+                    	<name>Test Mode</name>
+                    </test>
+                </modes>
+            </transaction>                 
+        </payment>
+    </global>
+    <frontend>
+        <routers>
+            <setefi>
+                <use>standard</use>
+                <args>
+                    <module>ShineSoftware_Setefi</module>
+                    <frontName>setefi</frontName>
+                </args>
+            </setefi>
+        </routers>
+        <translate>
+            <modules>
+                <ShineSoftware_Setefi>
+                    <files>
+                        <default>ShineSoftware_Setefi.csv</default>
+                    </files>
+                </ShineSoftware_Setefi>
+            </modules>
+        </translate>
+        <layout>
+            <updates>
+                <setefi>
+                    <file>setefi.xml</file>
+                </setefi>
+            </updates>
+        </layout>
+    </frontend>
+    <adminhtml>
+        <translate>
+            <modules>
+                <ShineSoftware_Setefi>
+                    <files>
+                        <default>ShineSoftware_Setefi.csv</default>
+                    </files>
+                </ShineSoftware_Setefi>
+            </modules>
+        </translate>
+    </adminhtml>
+	<default>
+        <payment>        
+            <setefi_cc>
+                <active>1</active>
+                <model>setefi/cc</model>
+                <order_status>1</order_status>
+                <title>Setefi (Consorzio Setefi)</title>
+                <allowspecific>0</allowspecific>
+                <request_type>authorize</request_type>
+                <authorization>1</authorization>
+                <information>Il modulo della Setefi v.7.0 vi permette di offrire il pagamento degli ordini attraverso l'uso di un sistema MultiBanca. Contattate la Shine Software per qualsiasi chiarimento via email all'indirizzo: cutomers@shinesoftware.com, inserite una vostra segnalazione su http://www.shinesoftware.com</information>
+            </setefi_cc>
+        </payment>
+    </default> 
+</config>

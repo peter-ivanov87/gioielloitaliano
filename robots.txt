@@ -1,0 +1,74 @@
+## abilita lettura del sito ai crawler. File Robots.txt generato da OptimizedGroup.com
+User-agent: *
+
+## chiusura file di sviluppo
+Disallow: CVS
+Disallow: .svn
+Disallow: .idea
+Disallow: .sql
+Disallow: .tgz
+
+## chiusura pagina admin
+Disallow: /admin/
+ 
+## chiusura pagine non necessarie
+Disallow: /404/
+Disallow: /app/
+Disallow: /cgi-bin/
+Disallow: /downloader/
+Disallow: /errors/
+Disallow: /includes/
+Disallow: /js/
+Disallow: /lib/
+Disallow: /magento/
+Disallow: /media/
+Disallow: /pkginfo/
+Disallow: /report/
+Disallow: /shell/
+Disallow: /skin/
+Disallow: /stats/
+Disallow: /var/
+ 
+## chiusura pagine di Magento
+Disallow: /api.php
+Disallow: /cron.php
+Disallow: /cron.sh
+Disallow: /error_log
+Disallow: /get.php
+Disallow: /install.php
+Disallow: /LICENSE.html
+Disallow: /LICENSE.txt
+Disallow: /LICENSE_AFL.txt
+Disallow: /README.txt
+Disallow: /RELEASE_NOTES.txt
+Disallow: /STATUS.txt
+ 
+## chisura paginazione
+Disallow: /*?dir*
+Disallow: /*?dir=desc
+Disallow: /*?dir=asc
+Disallow: /*?limit=all
+Disallow: /*?mode*
+ 
+## chisura dei session ID
+Disallow: /*?SID=
+ 
+## chiusura checkout
+Disallow: /checkout/
+Disallow: /onestepcheckout/
+Disallow: /customer/
+Disallow: /customer/account/
+Disallow: /customer/account/login/
+ 
+## chiusura ricerca
+Disallow: /catalogsearch/
+Disallow: /catalog/product_compare/
+Disallow: /catalog/category/view/
+Disallow: /catalog/product/view/
+ 
+## chiusura file dei server
+Disallow: /cgi-bin/
+Disallow: /cleanup.php
+Disallow: /apc.php
+Disallow: /memcache.php
+Disallow: /phpinfo.php

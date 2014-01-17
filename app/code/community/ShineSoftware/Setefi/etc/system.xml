@@ -1,0 +1,159 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * @category   Shine Software
+ * @package    Setefi
+ * @email	   info@shinesoftware.com
+ * @copyright  Copyright (c) 2008 Shine Software (http://www.shinesoftware.com)
+ */
+-->
+<config>
+   <sections>
+        <payment>
+            <groups>
+                <setefi_cc translate="label" module="setefi">
+                    <label>Setefi (Consorzio Setefi)</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <fields>
+                    	 
+                        <active translate="label">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </active>
+                        <order_status translate="label">
+                            <label>New order status</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_order_status</source_model>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </order_status>
+                        <sort_order translate="label">                            
+                            <label>Sort order</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </sort_order>                        
+                        <title translate="label">
+                            <label>Title</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </title>                    
+                        <allowspecific translate="label">
+                            <label>Payment to applicable countries</label>
+                            <frontend_type>allowspecific</frontend_type>
+                            <sort_order>5</sort_order>
+                            <source_model>adminhtml/system_config_source_payment_allspecificcountries</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </allowspecific>
+                        <specificcountry translate="label">
+                            <label>Payment to Specific countries</label>
+                            <frontend_type>multiselect</frontend_type>
+                            <sort_order>6</sort_order>
+                            <source_model>adminhtml/system_config_source_country</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </specificcountry>						
+                        <alias translate="label">
+                          <label>Alias ID</label>
+                          <frontend_type>text</frontend_type>
+                          <sort_order>7</sort_order>
+                          <show_in_default>1</show_in_default>
+                          <show_in_website>1</show_in_website>
+                          <show_in_store>0</show_in_store>
+                        </alias>
+                        
+                        <password translate="label">
+                          <label>Password</label>
+                          <frontend_type>text</frontend_type>
+                          <sort_order>8</sort_order>
+                          <show_in_default>1</show_in_default>
+                          <show_in_website>1</show_in_website>
+                          <show_in_store>0</show_in_store>
+                        </password>
+                      
+                        <url_store translate="label">
+                          <label>URL Store</label>
+                          <frontend_type>text</frontend_type>
+                          <sort_order>9</sort_order>
+                          <show_in_default>1</show_in_default>
+                          <show_in_website>1</show_in_website>
+                          <show_in_store>0</show_in_store>
+                        </url_store> 
+                        
+						<action translate="label">
+                          <label>Payment Method</label>
+                          <frontend_type>select</frontend_type>
+                          <source_model>setefi/source_Authorization</source_model>
+                          <sort_order>11</sort_order>
+                          <show_in_default>1</show_in_default>
+                          <show_in_website>1</show_in_website>
+                          <show_in_store>0</show_in_store>
+                        </action>                        
+                        
+                        <firststatus translate="label">
+                          <label>Starting Order Status</label>
+                          <frontend_type>select</frontend_type>
+                          <source_model>setefi/source_status</source_model>
+                          <sort_order>1</sort_order>
+                          <show_in_default>1</show_in_default>
+                          <show_in_website>1</show_in_website>
+                          <show_in_store>0</show_in_store>
+                        </firststatus>
+                        
+                        
+                        <transaction_mode translate="label">
+                          <label>Transaction Mode</label>
+                          <frontend_type>select</frontend_type>
+                          <source_model>setefi/source_transactionMode</source_model>
+                          <sort_order>14</sort_order>
+                          <show_in_default>1</show_in_default>
+                          <show_in_website>1</show_in_website>
+                          <show_in_store>0</show_in_store>
+                        </transaction_mode>
+                        
+                        <information>
+                          <label></label>
+                          <frontend_type>label</frontend_type>
+                          <sort_order>100</sort_order>
+                          <show_in_default>1</show_in_default>
+                          <show_in_website>1</show_in_website>
+                          <show_in_store>0</show_in_store>
+                        </information>
+                        
+                    </fields>
+                </setefi_cc>
+            </groups>
+        </payment>
+    </sections>
+</config>

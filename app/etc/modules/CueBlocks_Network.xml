@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--
+/**
+ *
+ * Package :- Social_Bookmarks_Icons_2_0-2.4.tgz
+ * Version :- 2.4
+ * Edition :- Community
+ * Developed By :- CueBlocks.com
+ * 
+ */
+-->
+<config>
+	<modules>
+		<CueBlocks_Network>
+		    <active>true</active>
+		    <codePool>community</codePool>
+		    <depends>
+			<Mage_Catalog />
+		    </depends>
+		</CueBlocks_Network>
+	</modules>
+</config>

@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<layout version="1.0.0">
+	<default>
+		<reference name="newsletter">
+			<action method ="setTemplate"><template>privacy/newsletter/subscribe.phtml</template></action>
+		</reference>
+	</default>
+	
+	<privacy_page_index>
+		<reference name="root">
+			<action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+		</reference>
+		<reference name="content">
+			<block type="privacy/page" name="privacy_page" template="privacy/page.phtml"/>
+		</reference>
+	</privacy_page_index>
+	
+	<checkout_onepage_review>
+		<reference name="checkout.onepage.agreements">
+			<action method="setTemplate" ifconfig="privacy/condition/rewrite"><template>privacy/checkout/onepage/agreements.phtml</template></action>
+		</reference>
+	</checkout_onepage_review>
+	
+	<checkout_multishipping_overview>
+		<reference name="checkout.multishipping.agreements">
+			<action method="setTemplate" ifconfig="privacy/condition/rewrite"><template>privacy/checkout/multishipping/agreements.phtml</template></action>
+		</reference>
+	</checkout_multishipping_overview>
+	
+	<contacts_index_index>
+		<reference name="contactForm">
+			<action method ="setTemplate"><template>privacy/contacts/form.phtml</template></action>
+		</reference>
+	</contacts_index_index>
+	
+	<paypal_express_review>
+		<reference name="paypal.express.review.details.agreements">
+			<action method="setTemplate" ifconfig="privacy/condition/rewrite"><template>privacy/checkout/onepage/agreements.phtml</template></action>
+		</reference>
+	</paypal_express_review>
+	
+	<paypaluk_express_review>
+		<reference name="paypal.express.review.details.agreements">
+			<action method="setTemplate" ifconfig="privacy/condition/rewrite"><template>privacy/checkout/onepage/agreements.phtml</template></action>
+		</reference>
+	</paypaluk_express_review>
+</layout>

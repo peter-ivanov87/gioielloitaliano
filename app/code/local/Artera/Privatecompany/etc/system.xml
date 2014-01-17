@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<config>
+	<tabs>
+		<artera translate="label" module="privatecompany">
+			<label>Artera</label>
+			<sort_order>0</sort_order>
+		</artera>
+	</tabs>
+	<sections>
+		<privatecompany  translate="label" module="privatecompany">                    
+		<label>Privati / Aziende</label>
+		<tab>artera</tab>
+		<frontend_type>text</frontend_type>
+		<sort_order>0</sort_order>
+		<show_in_default>1</show_in_default>
+		<show_in_website>1</show_in_website>
+		<show_in_store>1</show_in_store>            
+			<groups>
+				<visibility translate="label"> 
+					<label>Visibilità campi</label>
+					<comment><![CDATA[]]></comment>
+					<frontend_type>text</frontend_type>
+					<sort_order>0</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<avviso>
+							<frontend_model>privatecompany/adminhtml_system_config_fieldset_hint</frontend_model>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+						</avviso>
+						<fiscalcode translate="label">
+							<label>Visualizza Codice Fiscale nel frontend</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+						</fiscalcode>
+						<company translate="label">
+							<label>Visualizza Ragione Sociale nel frontend</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>2</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+						</company>
+						<customer_address translate="label">
+							<label>Richiedi indirizzo cliente nel form di registrazione</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>3</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+						</customer_address>
+					</fields>
+				</visibility>
+				<required translate="label"> 
+					<label>Obbligatorietà campi</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>1</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<vat_id translate="label">
+							<label>Partita IVA obbligatoria</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>0</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+						</vat_id>
+						<fiscalcode translate="label">
+							<label>Codice Fiscale obbligatorio</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+						</fiscalcode>
+						<company translate="label">
+							<label>Ragione Sociale obbligatoria</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>2</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+						</company>
+					</fields>
+				</required>
+			</groups>
+		</privatecompany>
+	</sections>
+</config>

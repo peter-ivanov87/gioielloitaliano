@@ -1,0 +1,63 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2011 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+/**
+ * @var Mage_Page_Block_Html_Header $this
+ */
+?>
+
+<div class="header-container" style="clear:both;">
+    
+	<div class="header">
+            <div class="head_row0">
+                <div class="user_info">
+                    <a href="<?php echo $this->getUrl('customer/account') ?>" class="link_account">Il tuo Account</a>
+                    <p class="welcome-msg"><?php echo $this->getWelcome() ?> <?php echo $this->getAdditionalHtml() ?></p>          
+                </div>
+                <?php echo $this->getChildHtml('header_sidebar') ?>
+                
+                <?php echo $this->getChildHtml('store_language') ?>
+                <?php echo $this->getChildHtml('currency_header') ?>
+                <?php echo $this->getChildHtml('topSearch') ?>
+            </div>
+            <div class="head_row1">
+                <div class="log_panel">
+                    <h1 class="logo"><strong><?php echo $this->getLogoAlt() ?></strong><a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>"><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a></h1>
+                </div>
+                <div class="contact">
+                    <button type="button" title="Add to cart" class="button btn-cart" onclick="setLocation('http://151.237.48.179/gioielloitaliano/checkout/cart/add/uenc/aHR0cDovLzE1MS4yMzcuNDguMTc5L2dpb2llbGxvaXRhbGlhbm8vYnJhY2NpYWxpL2FyZ2VudG8uaHRtbA,,/product/1081/')">
+                        <span><font><font class="goog-text-highlight">See them product</font></font></span>
+                    </button>
+                </div>
+            </div>
+        
+        <div class="head_row2">
+        <?php echo $this->getChildHtml('topMenu') ?>
+        </div>
+    </div>
+</div>
+<?php if ($this->getIsHomePage()):?>
+<?php echo $this->getChildHtml('header_slider') ?>
+<?php endif?>

@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<layout version="1.0.0">
+	<checkout_onepage_index>
+		<reference name="checkout.onepage.billing">
+			<action method ="setTemplate"><template>privatecompany/checkout/onepage/billing.phtml</template></action>
+			<action method ="setTemplate" ifconfig="persistent/options/enabled"><template>privatecompany/persistent/checkout/onepage/billing.phtml</template></action>
+		</reference>
+		<reference name="checkout.onepage.shipping">
+			<action method ="setTemplate"><template>privatecompany/checkout/onepage/shipping.phtml</template></action>
+		</reference>
+	</checkout_onepage_index>
+	
+	<customer_account_create>
+		<reference name="customer_form_register">
+			<action method ="setTemplate"><template>privatecompany/customer/form/register.phtml</template></action>
+			<action method ="setTemplate" ifconfig="persistent/options/enabled"><template>privatecompany/persistent/customer/form/register.phtml</template></action>
+		</reference>
+	</customer_account_create>
+	
+	<customer_address_form>
+		<reference name="customer_address_edit">
+			<action method ="setTemplate"><template>privatecompany/customer/address/edit.phtml</template></action>
+		</reference>
+	</customer_address_form>
+	
+	<paypal_express_review>
+		<reference name="express.review.billing">
+			<action method="setTemplate"><template>privatecompany/paypal/express/review/address.phtml</template></action>
+		</reference>
+		<reference name="express.review.shipping">
+			<action method="setTemplate"><template>privatecompany/paypal/express/review/address.phtml</template></action>
+		</reference>
+	</paypal_express_review>
+</layout>

@@ -1,0 +1,4 @@
+<?php
+$url = Mage::helper('adminhtml')->getUrl('adminhtml/system_config/edit',array('section' => 'customer'));
+?>
+<span class="notice" style="display:block; margin:10px 5px;"><?=Mage::helper('privatecompany')->__('Per gestire la visibilità del campo partita IVA, bisogna settare il valore del campo "Mostra partita IVA nel frontend" andando <a href="%s">in questa pagina</a>, sezione "Crea nuove opzioni account"', $url);?></span>

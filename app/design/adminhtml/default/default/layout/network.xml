@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <network_adminhtml_network_index>
+        <reference name="content">
+            <block type="network/adminhtml_network" name="network" />
+        </reference>
+    </network_adminhtml_network_index>
+</layout>
